@@ -1,4 +1,4 @@
-def get_future_step(captured_data: list[int]) -> tuple[int, int]:
+def predict_steps(captured_data: list[int]) -> tuple[int, int]:
     curr_level = captured_data
     all_derivations = []
 
@@ -27,7 +27,7 @@ if __name__ == '__main__':
 
     with open(input_data, 'r') as f:
         for line in f.read().splitlines():
-            predicted_values = get_future_step([int(x) for x in line.split()])
+            predicted_values = predict_steps([int(x) for x in line.split()])
             sum_next_steps_part1 += predicted_values[0]
             sum_prev_steps_part2 += predicted_values[1]
 
